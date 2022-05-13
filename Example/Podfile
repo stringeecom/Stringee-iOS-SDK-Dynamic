@@ -1,0 +1,6 @@
+use_frameworks!
+target 'Stringee-Dynamic_Tests' do
+  pod 'Stringee-Dynamic', :path => '../'
+  
+  
+end

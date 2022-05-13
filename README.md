@@ -5,11 +5,6 @@
 [![License](https://img.shields.io/cocoapods/l/Stringee-Dynamic.svg?style=flat)](https://cocoapods.org/pods/Stringee-Dynamic)
 [![Platform](https://img.shields.io/cocoapods/p/Stringee-Dynamic.svg?style=flat)](https://cocoapods.org/pods/Stringee-Dynamic)
 
-## Example
-
-To run the example project, clone the repo, and run `pod install` from the Example directory first.
-
-## Requirements
 
 ## Installation
 
@@ -22,7 +17,7 @@ pod 'Stringee-Dynamic'
 
 ## Author
 
-info@stringee.com, info@stringee.com
+info@stringee.com
 
 ## License
 

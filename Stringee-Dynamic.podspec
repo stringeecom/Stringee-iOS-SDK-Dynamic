@@ -1,42 +1,35 @@
-#
-# Be sure to run `pod lib lint Stringee-Dynamic.podspec' to ensure this is a
-# valid spec before submitting.
-#
-# Any lines starting with a # are optional, but their use is encouraged
-# To learn more about a Podspec see https://guides.cocoapods.org/syntax/podspec.html
-#
 
 Pod::Spec.new do |s|
   s.name             = 'Stringee-Dynamic'
   s.version          = '0.1.0'
-  s.summary          = 'A short description of Stringee-Dynamic.'
-
-# This description is used to generate tags and improve search results.
-#   * Think: What does it do? Why did you write it? What is the focus?
-#   * Try to keep it short, snappy and to the point.
-#   * Write the description between the DESC delimiters below.
-#   * Finally, don't worry about the indent, CocoaPods strips it!
+  s.summary          = 'Developed by Stringee'
 
   s.description      = <<-DESC
-TODO: Add long description of the pod here.
+The Stringee platform, developed by Stringee, makes it easy to embed high-quality interactive video, voice, messaging, and screen sharing into web and mobile apps.
                        DESC
 
-  s.homepage         = 'https://github.com/info@stringee.com/Stringee-Dynamic'
-  # s.screenshots     = 'www.example.com/screenshots_1', 'www.example.com/screenshots_2'
+  s.homepage         = 'https://github.com/stringeecom/Stringee-iOS-SDK-Dynamic'
   s.license          = { :type => 'MIT', :file => 'LICENSE' }
-  s.author           = { 'info@stringee.com' => 'info@stringee.com' }
-  s.source           = { :git => 'https://github.com/info@stringee.com/Stringee-Dynamic.git', :tag => s.version.to_s }
-  # s.social_media_url = 'https://twitter.com/<TWITTER_USERNAME>'
+  s.author           = { 'Stringee' => 'info@stringee.com' }
+  s.source           = { :git => 'https://github.com/stringeecom/Stringee-iOS-SDK-Dynamic.git', :tag => s.version.to_s }
 
-  s.ios.deployment_target = '9.0'
+  s.ios.deployment_target = '10.0'
+  s.pod_target_xcconfig = {'OTHER_LDFLAGS' => '-ObjC'}
 
-  s.source_files = 'Stringee-Dynamic/Classes/**/*'
-  
-  # s.resource_bundles = {
-  #   'Stringee-Dynamic' => ['Stringee-Dynamic/Assets/*.png']
-  # }
+  s.source_files = 'Stringee-Dynamic/Classes/**/Stringee.framework/Headers/*.h'
+  s.public_header_files = 'Stringee-Dynamic/Classes/**/Stringee.framework/Headers/*.h'
 
-  # s.public_header_files = 'Pod/Classes/**/*.h'
-  # s.frameworks = 'UIKit', 'MapKit'
-  # s.dependency 'AFNetworking', '~> 2.3'
+  s.frameworks = 'CoreFoundation', 'VideoToolbox', 'AudioToolbox', 'AVFoundation', 'GLKit'
+  s.libraries = 'icucore', 'stdc++'
+
+  s.vendored_frameworks = 'Stringee-Dynamic/Classes/**/Stringee.framework'
+  s.dependency "GoogleWebRTC", '1.1.31999'
+
+  s.pod_target_xcconfig = {
+    'EXCLUDED_ARCHS[sdk=iphonesimulator*]' => 'arm64'
+  }
+  s.user_target_xcconfig = {
+    'EXCLUDED_ARCHS[sdk=iphonesimulator*]' => 'arm64'
+  }
+
 end
